@@ -27,9 +27,6 @@ wheels/
 .installed.cfg
 *.egg
 
-# Generated site output
-docs/
-
 # IDE
 .vscode/
 .idea/

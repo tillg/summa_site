@@ -15,11 +15,11 @@
                 extend: {
                     colors: {
                         
-                        'brand-orange': '#f4a261',
+                        'brand-orange': '#FB923C',
                         
-                        'brand-yellow': '#f9b94a',
+                        'brand-yellow': '#F59E0B',
                         
-                        'brand-coral': '#e76f6f',
+                        'brand-coral': '#EF4444',
                         
                     }
                 }
@@ -32,38 +32,42 @@
         :root {
             /* Brand Colors */
             
-            --color-brand-orange: #f4a261;
+            --color-brand-orange: #FB923C;
             
-            --color-brand-yellow: #f9b94a;
+            --color-brand-yellow: #F59E0B;
             
-            --color-brand-coral: #e76f6f;
+            --color-brand-coral: #EF4444;
             
 
             /* Background Colors */
             
             --color-bg-primary: #000000;
             
-            --color-bg-secondary: #111827;
+            --color-bg-secondary: #1a1a1a;
             
-            --color-bg-tertiary: #1f2937;
+            --color-bg-tertiary: #2a2a2a;
+            
+            --color-bg-quaternary: #3a3a3a;
             
 
             /* Text Colors */
             
             --color-text-primary: #ffffff;
             
-            --color-text-secondary: #d1d5db;
+            --color-text-secondary: #cccccc;
             
-            --color-text-tertiary: #9ca3af;
+            --color-text-tertiary: #999999;
             
-            --color-text-muted: #374151;
+            --color-text-muted: #666666;
             
             --color-text-dark: #000000;
             
 
             /* Border Colors */
             
-            --color-border-primary: #1f2937;
+            --color-border-primary: #3a3a3a;
+            
+            --color-border-subtle: #2a2a2a;
             
 
             /* Spacing */
@@ -109,7 +113,8 @@
     </style>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/static/images/summarum_logo.png">
+    <link rel="icon" type="image/svg+xml" href="/static/images/logo.svg">
+    <link rel="alternate icon" type="image/png" href="/static/images/summarum_logo.png">
 
     
 
@@ -117,12 +122,12 @@
 </head>
 <body class="bg-black text-white min-h-screen flex flex-col">
     <!-- Navigation -->
-    <nav class="bg-black border-b border-gray-800">
+    <nav class="bg-black border-b" style="border-color: var(--color-border-primary);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo and brand -->
                 <div class="flex items-center space-x-3">
-                    <img src="/static/images/summarum_logo.png" alt="Summarum Logo" class="h-10 w-10">
+                    <img src="/static/images/logo.svg" alt="Summarum Logo" class="h-10 w-10">
                     <a href="/" class="text-xl font-bold text-white hover:text-brand-orange transition-colors">
                         Summarum
                     </a>
@@ -147,11 +152,11 @@
         </div>
 
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800">
+        <div id="mobile-menu" class="hidden md:hidden border-t" style="border-color: var(--color-border-primary); background-color: var(--color-bg-secondary);">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="/" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-900 rounded transition-colors">Home</a>
-                <a href="/legal.html" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-900 rounded transition-colors">Legal</a>
-                <a href="/privacy.html" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-900 rounded transition-colors">Privacy</a>
+                <a href="/" class="block px-3 py-2 hover:text-white rounded transition-colors" style="color: var(--color-text-secondary);">Home</a>
+                <a href="/legal.html" class="block px-3 py-2 hover:text-white rounded transition-colors" style="color: var(--color-text-secondary);">Legal</a>
+                <a href="/privacy.html" class="block px-3 py-2 hover:text-white rounded transition-colors" style="color: var(--color-text-secondary);">Privacy</a>
             </div>
         </div>
     </nav>
@@ -169,13 +174,13 @@
                 </span>
             </h1>
             
-            <p class="text-xl text-gray-400">How we handle your data and protect your privacy</p>
+            <p class="text-xl" style="color: var(--color-text-tertiary);">How we handle your data and protect your privacy</p>
             
         </header>
 
         <!-- Page Content -->
         <div class="prose prose-invert prose-lg max-w-none">
-            <div class="text-gray-300 leading-relaxed space-y-6">
+            <div class="leading-relaxed space-y-6" style="color: var(--color-text-secondary);">
                 <p><strong>Effective date:</strong> 2025-12-01</p>
 <p>Summarum ("the App") is provided by Till Gartner ("we", "us", or "our"). Your privacy is important to us. This Privacy Policy explains how your information is handled when you use the App.</p>
 <h2>1. Information We Collect</h2>
@@ -237,32 +242,32 @@ Email: till.gartner@gmail.com</p>
     .prose h2 { @apply text-2xl font-bold text-white mt-8 mb-4; }
     .prose h3 { @apply text-xl font-semibold text-white mt-6 mb-3; }
     .prose h4 { @apply text-lg font-semibold text-white mt-4 mb-2; }
-    .prose p { @apply text-gray-300 mb-4; }
-    .prose ul { @apply list-disc list-inside text-gray-300 mb-4 space-y-2; }
-    .prose ol { @apply list-decimal list-inside text-gray-300 mb-4 space-y-2; }
+    .prose p { color: var(--color-text-secondary); @apply mb-4; }
+    .prose ul { color: var(--color-text-secondary); @apply list-disc list-inside mb-4 space-y-2; }
+    .prose ol { color: var(--color-text-secondary); @apply list-decimal list-inside mb-4 space-y-2; }
     .prose li { @apply ml-4; }
     .prose a { @apply text-brand-orange hover:text-brand-yellow transition-colors underline; }
     .prose strong { @apply text-white font-semibold; }
     .prose em { @apply italic; }
-    .prose code { @apply bg-gray-900 text-brand-yellow px-2 py-1 rounded text-sm; }
-    .prose pre { @apply bg-gray-900 border border-gray-800 rounded-lg p-4 overflow-x-auto mb-4; }
-    .prose blockquote { @apply border-l-4 border-brand-orange pl-4 italic text-gray-400 my-4; }
-    .prose hr { @apply border-gray-800 my-8; }
+    .prose code { background-color: var(--color-bg-tertiary); @apply text-brand-yellow px-2 py-1 rounded text-sm; }
+    .prose pre { background-color: var(--color-bg-tertiary); border: 1px solid var(--color-border-primary); @apply rounded-lg p-4 overflow-x-auto mb-4; }
+    .prose blockquote { @apply border-l-4 border-brand-orange pl-4 italic my-4; color: var(--color-text-tertiary); }
+    .prose hr { border-color: var(--color-border-primary); @apply my-8; }
     .prose table { @apply w-full border-collapse mb-4; }
-    .prose th { @apply bg-gray-900 text-white font-semibold p-3 text-left border border-gray-800; }
-    .prose td { @apply text-gray-300 p-3 border border-gray-800; }
+    .prose th { background-color: var(--color-bg-tertiary); border: 1px solid var(--color-border-primary); @apply text-white font-semibold p-3 text-left; }
+    .prose td { color: var(--color-text-secondary); border: 1px solid var(--color-border-primary); @apply p-3; }
 </style>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-gray-800 mt-20">
+    <footer class="border-t mt-20" style="background-color: var(--color-bg-tertiary); border-color: var(--color-border-primary);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Brand -->
                 <div>
                     <div class="flex items-center space-x-3 mb-4">
-                        <img src="/static/images/summarum_logo.png" alt="Summarum Logo" class="h-8 w-8">
+                        <img src="/static/images/logo.svg" alt="Summarum Logo" class="h-8 w-8">
                         <span class="text-lg font-bold">Summarum</span>
                     </div>
                     <p class="text-gray-400 text-sm">Your Financial Overview, Simplified</p>
@@ -289,7 +294,7 @@ Email: till.gartner@gmail.com</p>
                 </div>
             </div>
 
-            <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+            <div class="mt-8 pt-8 border-t text-center" style="border-color: var(--color-border-primary);">
                 <p class="text-gray-400 text-sm">
                     &copy; 2025 Summarum. All rights reserved.
                 </p>

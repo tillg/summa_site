@@ -59,7 +59,8 @@
     </style>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/static/images/summarum_logo.png">
+    <link rel="icon" type="image/svg+xml" href="/static/images/logo.svg">
+    <link rel="alternate icon" type="image/png" href="/static/images/summarum_logo.png">
 
     {% if umami_website_id and umami_script_url %}
     <!-- Umami Analytics -->
@@ -70,12 +71,12 @@
 </head>
 <body class="bg-black text-white min-h-screen flex flex-col">
     <!-- Navigation -->
-    <nav class="bg-black border-b border-gray-800">
+    <nav class="bg-black border-b" style="border-color: var(--color-border-primary);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo and brand -->
                 <div class="flex items-center space-x-3">
-                    <img src="/static/images/summarum_logo.png" alt="{{ site.name }} Logo" class="h-10 w-10">
+                    <img src="/static/images/logo.svg" alt="{{ site.name }} Logo" class="h-10 w-10">
                     <a href="/" class="text-xl font-bold text-white hover:text-brand-orange transition-colors">
                         {{ site.name }}
                     </a>
@@ -100,11 +101,11 @@
         </div>
 
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800">
+        <div id="mobile-menu" class="hidden md:hidden border-t" style="border-color: var(--color-border-primary); background-color: var(--color-bg-secondary);">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="/" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-900 rounded transition-colors">Home</a>
-                <a href="/legal.html" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-900 rounded transition-colors">Legal</a>
-                <a href="/privacy.html" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-900 rounded transition-colors">Privacy</a>
+                <a href="/" class="block px-3 py-2 hover:text-white rounded transition-colors" style="color: var(--color-text-secondary);">Home</a>
+                <a href="/legal.html" class="block px-3 py-2 hover:text-white rounded transition-colors" style="color: var(--color-text-secondary);">Legal</a>
+                <a href="/privacy.html" class="block px-3 py-2 hover:text-white rounded transition-colors" style="color: var(--color-text-secondary);">Privacy</a>
             </div>
         </div>
     </nav>
@@ -115,13 +116,13 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-gray-800 mt-20">
+    <footer class="border-t mt-20" style="background-color: var(--color-bg-tertiary); border-color: var(--color-border-primary);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Brand -->
                 <div>
                     <div class="flex items-center space-x-3 mb-4">
-                        <img src="/static/images/summarum_logo.png" alt="{{ site.name }} Logo" class="h-8 w-8">
+                        <img src="/static/images/logo.svg" alt="{{ site.name }} Logo" class="h-8 w-8">
                         <span class="text-lg font-bold">{{ site.name }}</span>
                     </div>
                     <p class="text-gray-400 text-sm">{{ site.tagline }}</p>
@@ -148,7 +149,7 @@
                 </div>
             </div>
 
-            <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+            <div class="mt-8 pt-8 border-t text-center" style="border-color: var(--color-border-primary);">
                 <p class="text-gray-400 text-sm">
                     &copy; {{ current_year }} {{ site.name }}. All rights reserved.
                 </p>

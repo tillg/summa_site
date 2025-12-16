@@ -9,32 +9,34 @@ sizes, and other design-related values used throughout the site.
 # COLORS
 # =============================================================================
 
-# Brand Colors (extracted from logo)
+# Brand Colors (extracted from new logo)
 BRAND_COLORS = {
-    "orange": "#f4a261",
-    "yellow": "#f9b94a",
-    "coral": "#e76f6f",
+    "orange": "#FB923C",
+    "yellow": "#F59E0B",
+    "coral": "#EF4444",
 }
 
-# Background Colors
+# Background Colors (neutral grays)
 BACKGROUND_COLORS = {
-    "primary": "#000000",      # black
-    "secondary": "#111827",    # gray-900
-    "tertiary": "#1f2937",     # gray-800
+    "primary": "#000000",      # Pure black (main background)
+    "secondary": "#1a1a1a",    # Darker neutral gray
+    "tertiary": "#2a2a2a",     # Logo gray (cards, panels)
+    "quaternary": "#3a3a3a",   # Lighter neutral gray (accents)
 }
 
-# Text Colors
+# Text Colors (neutral grays)
 TEXT_COLORS = {
-    "primary": "#ffffff",      # white
-    "secondary": "#d1d5db",    # gray-300
-    "tertiary": "#9ca3af",     # gray-400
-    "muted": "#374151",        # gray-700
-    "dark": "#000000",         # black (for text on light backgrounds)
+    "primary": "#ffffff",      # White
+    "secondary": "#cccccc",    # Light neutral gray (secondary text)
+    "tertiary": "#999999",     # Mid neutral gray (muted text)
+    "muted": "#666666",        # Dark neutral gray (very subtle text)
+    "dark": "#000000",         # Black (for text on light backgrounds)
 }
 
-# Border Colors
+# Border Colors (neutral grays)
 BORDER_COLORS = {
-    "primary": "#1f2937",      # gray-800
+    "primary": "#3a3a3a",      # Neutral gray (visible separation)
+    "subtle": "#2a2a2a",       # Darker neutral (subtle borders)
 }
 
 # Gradient Combinations

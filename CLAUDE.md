@@ -31,7 +31,29 @@ Required pages (as per Specs/01_BASIC_SITE.md):
 
 ## Development Commands
 
-### Building the Site
+### Development Server (Recommended)
+
+```bash
+python dev_server.py
+```
+
+This starts a development server that:
+- Automatically watches for file changes in `content/`, `templates/`, `static/`, and config files
+- Rebuilds the site when changes are detected (with debouncing)
+- Serves the site at `http://localhost:8000`
+- Provides colored console output for better visibility
+
+**What it watches:**
+- `content/` - Markdown content files
+- `templates/` - Jinja2 HTML templates
+- `static/` - Static assets (CSS, JS, images)
+- `design_variables.py` - Design system variables
+- `config.py` - Site configuration
+- `generate_site.py` - Site generator script
+
+Press `Ctrl+C` to stop the development server.
+
+### Building the Site Manually
 
 ```bash
 python generate_site.py  # Main site generator script

@@ -67,10 +67,25 @@ def generate_site():
         'contact_email': config.CONTACT_EMAIL,
         'testflight_link': config.TESTFLIGHT_LINK,
         'macos_download_link': config.MACOS_DOWNLOAD_LINK,
-        'brand_colors': config.BRAND_COLORS,
         'umami_website_id': config.UMAMI_WEBSITE_ID,
         'umami_script_url': config.UMAMI_SCRIPT_URL,
         'current_year': datetime.now().year,
+        # Design system variables
+        'brand_colors': config.BRAND_COLORS,
+        'background_colors': config.BACKGROUND_COLORS,
+        'text_colors': config.TEXT_COLORS,
+        'border_colors': config.BORDER_COLORS,
+        'font_sizes': config.FONT_SIZES,
+        'font_weights': config.FONT_WEIGHTS,
+        'spacing': config.SPACING,
+        'icon_sizes': config.ICON_SIZES,
+        'logo_sizes': config.LOGO_SIZES,
+        'border_radius': config.BORDER_RADIUS,
+        'shadows': config.SHADOWS,
+        'button_styles': config.BUTTON_STYLES,
+        'feature_card_styles': config.FEATURE_CARD_STYLES,
+        'gradients': config.GRADIENTS,
+        'tailwind_config': config.get_tailwind_config(),
     }
 
     # Process markdown files

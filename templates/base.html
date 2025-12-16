@@ -9,18 +9,54 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+        // Tailwind configuration using centralized design variables
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'brand-orange': '{{ brand_colors.orange }}',
-                        'brand-yellow': '{{ brand_colors.yellow }}',
-                        'brand-coral': '{{ brand_colors.coral }}',
+                        {% for name, color in brand_colors.items() %}
+                        'brand-{{ name }}': '{{ color }}',
+                        {% endfor %}
                     }
                 }
             }
         }
     </script>
+
+    <!-- Custom CSS Variables for additional design tokens -->
+    <style>
+        :root {
+            /* Brand Colors */
+            {% for name, color in brand_colors.items() %}
+            --color-brand-{{ name }}: {{ color }};
+            {% endfor %}
+
+            /* Background Colors */
+            {% for name, color in background_colors.items() %}
+            --color-bg-{{ name }}: {{ color }};
+            {% endfor %}
+
+            /* Text Colors */
+            {% for name, color in text_colors.items() %}
+            --color-text-{{ name }}: {{ color }};
+            {% endfor %}
+
+            /* Border Colors */
+            {% for name, color in border_colors.items() %}
+            --color-border-{{ name }}: {{ color }};
+            {% endfor %}
+
+            /* Spacing */
+            {% for name, size in spacing.items() %}
+            --spacing-{{ name }}: {{ size }};
+            {% endfor %}
+
+            /* Border Radius */
+            {% for name, radius in border_radius.items() %}
+            --radius-{{ name }}: {{ radius }};
+            {% endfor %}
+        }
+    </style>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/static/images/summarum_logo.png">

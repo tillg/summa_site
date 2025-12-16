@@ -2,6 +2,24 @@
 Configuration for Summarum website
 """
 
+from design_variables import (
+    BRAND_COLORS,
+    BACKGROUND_COLORS,
+    TEXT_COLORS,
+    BORDER_COLORS,
+    FONT_SIZES,
+    FONT_WEIGHTS,
+    SPACING,
+    ICON_SIZES,
+    LOGO_SIZES,
+    BORDER_RADIUS,
+    SHADOWS,
+    BUTTON_STYLES,
+    FEATURE_CARD_STYLES,
+    GRADIENTS,
+    get_tailwind_config,
+)
+
 # Site metadata
 SITE_NAME = "Summarum"
 SITE_TAGLINE = "Your Financial Overview, Simplified"
@@ -13,13 +31,6 @@ CONTENT_DIR = "content"
 TEMPLATE_DIR = "templates"
 STATIC_DIR = "static"
 OUTPUT_DIR = "docs"
-
-# Brand colors (from logo)
-BRAND_COLORS = {
-    "orange": "#f4a261",
-    "yellow": "#f9b94a",
-    "coral": "#e76f6f",
-}
 
 # Contact
 CONTACT_EMAIL = "till.gartner@gmail.com"

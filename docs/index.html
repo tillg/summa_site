@@ -9,18 +9,104 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+        // Tailwind configuration using centralized design variables
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
+                        
                         'brand-orange': '#f4a261',
+                        
                         'brand-yellow': '#f9b94a',
+                        
                         'brand-coral': '#e76f6f',
+                        
                     }
                 }
             }
         }
     </script>
+
+    <!-- Custom CSS Variables for additional design tokens -->
+    <style>
+        :root {
+            /* Brand Colors */
+            
+            --color-brand-orange: #f4a261;
+            
+            --color-brand-yellow: #f9b94a;
+            
+            --color-brand-coral: #e76f6f;
+            
+
+            /* Background Colors */
+            
+            --color-bg-primary: #000000;
+            
+            --color-bg-secondary: #111827;
+            
+            --color-bg-tertiary: #1f2937;
+            
+
+            /* Text Colors */
+            
+            --color-text-primary: #ffffff;
+            
+            --color-text-secondary: #d1d5db;
+            
+            --color-text-tertiary: #9ca3af;
+            
+            --color-text-muted: #374151;
+            
+            --color-text-dark: #000000;
+            
+
+            /* Border Colors */
+            
+            --color-border-primary: #1f2937;
+            
+
+            /* Spacing */
+            
+            --spacing-0: 0;
+            
+            --spacing-1: 0.25rem;
+            
+            --spacing-2: 0.5rem;
+            
+            --spacing-3: 0.75rem;
+            
+            --spacing-4: 1rem;
+            
+            --spacing-6: 1.5rem;
+            
+            --spacing-8: 2rem;
+            
+            --spacing-12: 3rem;
+            
+            --spacing-16: 4rem;
+            
+            --spacing-20: 5rem;
+            
+
+            /* Border Radius */
+            
+            --radius-none: 0;
+            
+            --radius-sm: 0.125rem;
+            
+            --radius-default: 0.25rem;
+            
+            --radius-md: 0.375rem;
+            
+            --radius-lg: 0.5rem;
+            
+            --radius-xl: 0.75rem;
+            
+            --radius-full: 9999px;
+            
+        }
+    </style>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/static/images/summarum_logo.png">

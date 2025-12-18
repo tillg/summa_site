@@ -38,6 +38,74 @@ def parse_markdown_file(filepath):
     return frontmatter, html_content
 
 
+def validate_landing_page(frontmatter, filepath):
+    """Validate landing page frontmatter has all required fields"""
+    errors = []
+
+    # Check required top-level fields
+    required_fields = ['tagline', 'hero_description', 'cta_buttons', 'features', 'screenshots', 'contact_section']
+    for field in required_fields:
+        if field not in frontmatter:
+            errors.append(f"Missing required field: '{field}'")
+
+    # Validate cta_buttons
+    if 'cta_buttons' in frontmatter:
+        if not isinstance(frontmatter['cta_buttons'], list):
+            errors.append("'cta_buttons' must be a list/array")
+        elif len(frontmatter['cta_buttons']) == 0:
+            errors.append("'cta_buttons' array cannot be empty")
+        else:
+            for i, button in enumerate(frontmatter['cta_buttons']):
+                button_required = ['label', 'url', 'color', 'icon']
+                for field in button_required:
+                    if field not in button:
+                        errors.append(f"cta_buttons[{i}] missing required field: '{field}'")
+
+    # Validate features
+    if 'features' in frontmatter:
+        if not isinstance(frontmatter['features'], list):
+            errors.append("'features' must be a list/array")
+        elif len(frontmatter['features']) == 0:
+            errors.append("'features' array cannot be empty")
+        else:
+            for i, feature in enumerate(frontmatter['features']):
+                feature_required = ['title', 'description', 'icon', 'color']
+                for field in feature_required:
+                    if field not in feature:
+                        errors.append(f"features[{i}] missing required field: '{field}'")
+
+    # Validate screenshots
+    if 'screenshots' in frontmatter:
+        if not isinstance(frontmatter['screenshots'], list):
+            errors.append("'screenshots' must be a list/array")
+        elif len(frontmatter['screenshots']) == 0:
+            errors.append("'screenshots' array cannot be empty - if the array is empty, this is a configuration error")
+        else:
+            for i, screenshot in enumerate(frontmatter['screenshots']):
+                screenshot_required = ['image', 'alt']
+                for field in screenshot_required:
+                    if field not in screenshot:
+                        errors.append(f"screenshots[{i}] missing required field: '{field}'")
+
+    # Validate contact_section
+    if 'contact_section' in frontmatter:
+        if not isinstance(frontmatter['contact_section'], dict):
+            errors.append("'contact_section' must be an object/dictionary")
+        else:
+            contact_required = ['title', 'description', 'email']
+            for field in contact_required:
+                if field not in frontmatter['contact_section']:
+                    errors.append(f"contact_section missing required field: '{field}'")
+
+    if errors:
+        error_message = f"\n❌ Validation failed for {filepath}:\n"
+        for error in errors:
+            error_message += f"   • {error}\n"
+        raise ValueError(error_message)
+
+    print(f"   ✅ Validation passed for landing page")
+
+
 def generate_site():
     """Main site generation function"""
     print("🚀 Generating Summarum website...")
@@ -96,6 +164,10 @@ def generate_site():
         print(f"   Processing {md_file.name}...")
         frontmatter, html_content = parse_markdown_file(md_file)
 
+        # Validate landing page (index.md) has required fields
+        if md_file.stem == 'index' and frontmatter.get('template') == 'landing':
+            validate_landing_page(frontmatter, md_file.name)
+
         # Determine output filename
         if md_file.stem == 'index':
             output_file = output_dir / 'index.html'
@@ -109,13 +181,20 @@ def generate_site():
 
         # Render template
         template = env.get_template(template_name)
+        # Pass all frontmatter to page context, with content added
+        page_context = {
+            **frontmatter,
+            'content': html_content,
+        }
+        # Ensure title and description have defaults if not in frontmatter
+        if 'title' not in page_context:
+            page_context['title'] = config.SITE_NAME
+        if 'description' not in page_context:
+            page_context['description'] = config.SITE_DESCRIPTION
+
         context = {
             **template_context,
-            'page': {
-                'title': frontmatter.get('title', config.SITE_NAME),
-                'description': frontmatter.get('description', config.SITE_DESCRIPTION),
-                'content': html_content,
-            }
+            'page': page_context
         }
 
         rendered_html = template.render(**context)

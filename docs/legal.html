@@ -181,19 +181,20 @@
         <!-- Page Content -->
         <div class="prose prose-invert prose-lg max-w-none">
             <div class="leading-relaxed space-y-6" style="color: var(--color-text-secondary);">
-                <h1>Legal Note (Impressum)</h1>
-<p><strong>TODO: Add your legal information here</strong></p>
-<p>This page should include:</p>
-<ul>
-<li>Company or individual name</li>
-<li>Address</li>
-<li>Contact information</li>
-<li>Registration details (if applicable)</li>
-<li>VAT number (if applicable)</li>
-<li>Responsible for content according to § 55 Abs. 2 RStV</li>
-</ul>
-<hr />
-<p><em>Please update this page with your actual legal information.</em></p>
+                <h1>Impressum</h1>
+<h2>Angaben gemäß § 5 TMG</h2>
+<p>Till Gartner</p>
+<h2>Kontakt</h2>
+<p>E-Mail: till.gartner@gmail.com</p>
+<h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+<p>Till Gartner</p>
+<h2>Haftungsausschluss</h2>
+<h3>Haftung für Inhalte</h3>
+<p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+<h3>Haftung für Links</h3>
+<p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+<h2>Datenschutz</h2>
+<p>Informationen zum Datenschutz finden Sie in unserer <a href="/privacy.html">Datenschutzerklärung</a>.</p>
             </div>
         </div>
     </div>
@@ -201,24 +202,118 @@
 
 <style>
     /* Custom prose styles for better markdown rendering */
-    .prose h1 { @apply text-3xl font-bold text-white mt-8 mb-4; }
-    .prose h2 { @apply text-2xl font-bold text-white mt-8 mb-4; }
-    .prose h3 { @apply text-xl font-semibold text-white mt-6 mb-3; }
-    .prose h4 { @apply text-lg font-semibold text-white mt-4 mb-2; }
-    .prose p { color: var(--color-text-secondary); @apply mb-4; }
-    .prose ul { color: var(--color-text-secondary); @apply list-disc list-inside mb-4 space-y-2; }
-    .prose ol { color: var(--color-text-secondary); @apply list-decimal list-inside mb-4 space-y-2; }
-    .prose li { @apply ml-4; }
-    .prose a { @apply text-brand-orange hover:text-brand-yellow transition-colors underline; }
-    .prose strong { @apply text-white font-semibold; }
-    .prose em { @apply italic; }
-    .prose code { background-color: var(--color-bg-tertiary); @apply text-brand-yellow px-2 py-1 rounded text-sm; }
-    .prose pre { background-color: var(--color-bg-tertiary); border: 1px solid var(--color-border-primary); @apply rounded-lg p-4 overflow-x-auto mb-4; }
-    .prose blockquote { @apply border-l-4 border-brand-orange pl-4 italic my-4; color: var(--color-text-tertiary); }
-    .prose hr { border-color: var(--color-border-primary); @apply my-8; }
-    .prose table { @apply w-full border-collapse mb-4; }
-    .prose th { background-color: var(--color-bg-tertiary); border: 1px solid var(--color-border-primary); @apply text-white font-semibold p-3 text-left; }
-    .prose td { color: var(--color-text-secondary); border: 1px solid var(--color-border-primary); @apply p-3; }
+    .prose h1 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: white;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+    .prose h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: white;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+    .prose h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: white;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+    .prose h4 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: white;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    .prose p {
+        color: var(--color-text-secondary);
+        margin-bottom: 1rem;
+    }
+    .prose ul {
+        color: var(--color-text-secondary);
+        list-style-type: disc;
+        list-style-position: inside;
+        margin-bottom: 1rem;
+    }
+    .prose ul li {
+        margin-bottom: 0.5rem;
+    }
+    .prose ol {
+        color: var(--color-text-secondary);
+        list-style-type: decimal;
+        list-style-position: inside;
+        margin-bottom: 1rem;
+    }
+    .prose ol li {
+        margin-bottom: 0.5rem;
+    }
+    .prose li {
+        margin-left: 1rem;
+    }
+    .prose a {
+        color: #FB923C;
+        text-decoration: underline;
+        transition: color 0.2s;
+    }
+    .prose a:hover {
+        color: #F59E0B;
+    }
+    .prose strong {
+        color: white;
+        font-weight: 600;
+    }
+    .prose em {
+        font-style: italic;
+    }
+    .prose code {
+        background-color: var(--color-bg-tertiary);
+        color: #F59E0B;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: 0.875rem;
+    }
+    .prose pre {
+        background-color: var(--color-bg-tertiary);
+        border: 1px solid var(--color-border-primary);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        overflow-x: auto;
+        margin-bottom: 1rem;
+    }
+    .prose blockquote {
+        border-left: 4px solid #FB923C;
+        padding-left: 1rem;
+        font-style: italic;
+        margin: 1rem 0;
+        color: var(--color-text-tertiary);
+    }
+    .prose hr {
+        border-color: var(--color-border-primary);
+        margin: 2rem 0;
+    }
+    .prose table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 1rem;
+    }
+    .prose th {
+        background-color: var(--color-bg-tertiary);
+        border: 1px solid var(--color-border-primary);
+        color: white;
+        font-weight: 600;
+        padding: 0.75rem;
+        text-align: left;
+    }
+    .prose td {
+        color: var(--color-text-secondary);
+        border: 1px solid var(--color-border-primary);
+        padding: 0.75rem;
+    }
 </style>
 
     </main>

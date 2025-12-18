@@ -207,6 +207,28 @@ Background colors use pure neutral grays (no blue tint):
 
 These are defined in `design_variables.py` and made available as both Tailwind custom colors and CSS variables.
 
+### App Icon Generation
+
+The repository includes a script to generate all required iOS, iPadOS, and macOS app icons from the logo:
+
+```bash
+python3 generate_icons.py
+```
+
+This will:
+- Generate all 28 required icon sizes for iPhone, iPad, and Mac
+- Create an `AppIcon.appiconset` directory ready for Xcode
+- Include properly formatted `Contents.json` for Xcode compatibility
+- Output icons ranging from 16x16px to 1024x1024px (App Store)
+
+**To use in Xcode:**
+1. Open your Xcode project
+2. Select your app target
+3. Go to 'App Icons and Launch Screen'
+4. Drag `logo/AppIcon.appiconset/` into the App Icon source
+
+The script uses Pillow to recreate the logo design programmatically, ensuring crisp rendering at all sizes without requiring external dependencies like Cairo.
+
 ## Todo
 
 - [ ] Add actual privacy policy content

@@ -62,9 +62,18 @@
     <link rel="icon" type="image/svg+xml" href="/static/images/logo.svg">
     <link rel="alternate icon" type="image/png" href="/static/images/summarum_logo.png">
 
-    {% if umami_website_id and umami_script_url %}
-    <!-- Umami Analytics -->
-    <script async src="{{ umami_script_url }}" data-website-id="{{ umami_website_id }}"></script>
+    {% if enable_analytics and google_analytics_id %}
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ google_analytics_id }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ google_analytics_id }}', {
+            'anonymize_ip': true,
+            'cookie_flags': 'SameSite=None;Secure'
+        });
+    </script>
     {% endif %}
 
     {% block extra_head %}{% endblock %}

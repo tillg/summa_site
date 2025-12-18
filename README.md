@@ -174,6 +174,75 @@ Your content here...
 
 4. **Configure custom domain** (see Specs/01_BASIC_SITE.md for detailed DNS setup)
 
+## Analytics
+
+### Google Analytics 4 (GA4)
+
+The site is configured with Google Analytics 4 for tracking user behavior and traffic.
+
+**Environment-Based Tracking:**
+- **Development**: Analytics are automatically disabled when building locally
+- **Production**: Analytics are enabled when building with `ENVIRONMENT=production`
+
+**Building for production with analytics:**
+```bash
+ENVIRONMENT=production python3 generate_site.py
+```
+
+### Viewing Analytics Data
+
+To view your site traffic and user behavior:
+
+1. **Access the GA4 Dashboard**
+   - Go to [analytics.google.com](https://analytics.google.com)
+   - Sign in with the Google account that has access to the property
+   - Select the "Summarum" property (ID: G-CYN3HPDLCG)
+
+2. **Key Reports to Check**
+
+   **Real-time Report:**
+   - View users currently on your site
+   - See which pages they're viewing
+   - Check CTA button clicks in real-time
+   - Navigate to: Reports → Real-time
+
+   **Traffic Overview:**
+   - View page views, sessions, and users
+   - See geographic distribution (countries/regions)
+   - Check device types (mobile, desktop, tablet)
+   - Navigate to: Reports → Acquisition → Traffic acquisition
+
+   **Engagement:**
+   - See which pages are most popular
+   - Track session duration
+   - Identify returning vs. new visitors
+   - Navigate to: Reports → Engagement → Pages and screens
+
+   **Events:**
+   - Track CTA button clicks (`cta_click` events)
+   - Track email contact clicks (`contact_click` events)
+   - See event counts and user engagement
+   - Navigate to: Reports → Engagement → Events
+
+3. **Custom Event Labels**
+
+   The following events are tracked:
+   - `cta_click` - Hero CTA button clicks (e.g., "testflight_beta_(ios/ipados/macos)")
+   - `contact_click` - Email contact button clicks ("email_contact")
+
+4. **Data Freshness**
+   - Real-time data: Available immediately
+   - Standard reports: May take 24-48 hours for first data to appear after deployment
+
+### Privacy Configuration
+
+Analytics is configured with privacy enhancements:
+- IP anonymization enabled
+- Cookie flags set to `SameSite=None;Secure`
+- Data retention period: 2-6 months (configurable in GA4 settings)
+
+For more details, see `Specs/04_USER_TRACKING.md`.
+
 ## Development
 
 ### Adding a New Page
@@ -236,7 +305,7 @@ The script uses Pillow to recreate the logo design programmatically, ensuring cr
 - [ ] Provide contact email address
 - [ ] Add screenshots when available
 - [ ] Configure App Store/TestFlight links
-- [ ] Set up Umami Analytics
+- [x] Set up Google Analytics 4
 
 ## Documentation
 

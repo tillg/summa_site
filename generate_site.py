@@ -135,8 +135,8 @@ def generate_site():
         'contact_email': config.CONTACT_EMAIL,
         'testflight_link': config.TESTFLIGHT_LINK,
         'macos_download_link': config.MACOS_DOWNLOAD_LINK,
-        'umami_website_id': config.UMAMI_WEBSITE_ID,
-        'umami_script_url': config.UMAMI_SCRIPT_URL,
+        'google_analytics_id': config.GOOGLE_ANALYTICS_ID,
+        'enable_analytics': config.ENABLE_ANALYTICS,
         'current_year': datetime.now().year,
         # Design system variables
         'brand_colors': config.BRAND_COLORS,

@@ -2,6 +2,8 @@
 Configuration for Summarum website
 """
 
+import os
+
 from design_variables import (
     BRAND_COLORS,
     BACKGROUND_COLORS,
@@ -35,10 +37,14 @@ OUTPUT_DIR = "docs"
 # Contact
 CONTACT_EMAIL = "till.gartner@gmail.com"
 
-# App Store links (placeholders for now)
-TESTFLIGHT_LINK = "#"  # TODO: Add TestFlight link when available
-MACOS_DOWNLOAD_LINK = "#"  # TODO: Add macOS download link when available
+# App Links
+TESTFLIGHT_LINK = ""  # Add TestFlight URL here
+MACOS_DOWNLOAD_LINK = ""  # Add macOS download URL here
 
-# Analytics
-UMAMI_WEBSITE_ID = ""  # TODO: Add Umami website ID after setup
-UMAMI_SCRIPT_URL = ""  # TODO: Add Umami script URL after setup
+# Google Analytics
+# Enable analytics only in production
+# Set ENVIRONMENT=production when deploying to enable analytics
+# For local development, analytics will be disabled by default
+IS_PRODUCTION = os.getenv('ENVIRONMENT', '').lower() == 'production'
+GOOGLE_ANALYTICS_ID = "G-CYN3HPDLCG"
+ENABLE_ANALYTICS = IS_PRODUCTION

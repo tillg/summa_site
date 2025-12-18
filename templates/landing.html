@@ -30,7 +30,11 @@
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 {% for button in page.cta_buttons %}
-                <a href="{{ button.url }}" class="inline-flex items-center px-8 py-3 bg-brand-{{ button.color }} hover:bg-opacity-90 text-white font-semibold rounded-lg transition-all transform hover:scale-105 shadow-lg">
+                <a href="{{ button.url }}"
+                   class="inline-flex items-center px-8 py-3 bg-brand-{{ button.color }} hover:bg-opacity-90 text-white font-semibold rounded-lg transition-all transform hover:scale-105 shadow-lg"
+                   {% if enable_analytics and google_analytics_id %}
+                   onclick="gtag('event', 'cta_click', {'event_category': 'engagement', 'event_label': '{{ button.label | replace('<br>', ' ') | striptags | lower | replace(' ', '_') }}'});"
+                   {% endif %}>
                     <img src="{{ button.icon }}" class="w-6 h-6 mr-2" alt="">
                     {{ button.label | safe }}
                 </a>
@@ -103,7 +107,11 @@
         <p class="text-lg text-gray-400 mb-8">
             {{ page.contact_section.description }}
         </p>
-        <a href="mailto:{{ page.contact_section.email }}" class="inline-flex items-center px-8 py-3 bg-brand-yellow hover:bg-opacity-90 text-black font-semibold rounded-lg transition-all transform hover:scale-105 shadow-lg">
+        <a href="mailto:{{ page.contact_section.email }}"
+           class="inline-flex items-center px-8 py-3 bg-brand-yellow hover:bg-opacity-90 text-black font-semibold rounded-lg transition-all transform hover:scale-105 shadow-lg"
+           {% if enable_analytics and google_analytics_id %}
+           onclick="gtag('event', 'contact_click', {'event_category': 'engagement', 'event_label': 'email_contact'});"
+           {% endif %}>
             <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>

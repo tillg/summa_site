@@ -44,8 +44,9 @@ class Colors:
 class SiteRebuilder(FileSystemEventHandler):
     """Handles file system events and triggers site rebuild."""
 
-    def __init__(self):
+    def __init__(self, project_root):
         super().__init__()
+        self.project_root = project_root
         self.last_rebuild = 0
         self.rebuild_delay = 1.0  # Debounce: wait 1 second before rebuilding
         self.rebuild_timer = None
@@ -105,18 +106,30 @@ class SiteRebuilder(FileSystemEventHandler):
 
             # Print rebuild notification
             timestamp = datetime.now().strftime("%H:%M:%S")
-            rel_path = os.path.relpath(changed_file)
+            rel_path = os.path.relpath(changed_file, self.project_root)
 
             print(f"\n{Colors.CYAN}[{timestamp}]{Colors.RESET} "
                   f"{Colors.YELLOW}Change detected:{Colors.RESET} {rel_path}")
             print(f"{Colors.BLUE}🔨 Rebuilding site...{Colors.RESET}")
 
             try:
+                # Save current directory and change to project root
+                current_dir = os.getcwd()
+                os.chdir(self.project_root)
+
                 # Run the site generator
                 generate_site.generate_site()
                 print(f"{Colors.GREEN}✅ Rebuild complete!{Colors.RESET}\n")
+
+                # Restore directory
+                os.chdir(current_dir)
             except Exception as e:
                 print(f"{Colors.RED}❌ Rebuild failed: {e}{Colors.RESET}\n")
+                # Make sure to restore directory even on error
+                try:
+                    os.chdir(current_dir)
+                except:
+                    pass
 
     def on_modified(self, event):
         """Called when a file is modified."""
@@ -155,21 +168,23 @@ def start_http_server():
         httpd.serve_forever()
 
 
-def start_file_watcher():
+def start_file_watcher(project_root):
     """Start watching for file changes."""
-    event_handler = SiteRebuilder()
+    event_handler = SiteRebuilder(project_root)
     observer = Observer()
 
-    # Watch specified directories
+    # Watch specified directories (use absolute paths)
     for path in WATCH_PATHS:
-        if os.path.exists(path):
-            observer.schedule(event_handler, path, recursive=True)
+        abs_path = os.path.join(project_root, path)
+        if os.path.exists(abs_path):
+            observer.schedule(event_handler, abs_path, recursive=True)
             print(f"{Colors.CYAN}👀 Watching:{Colors.RESET} {path}/")
 
-    # Watch specified files
+    # Watch specified files (use absolute paths)
     for file in WATCH_FILES:
-        if os.path.exists(file):
-            observer.schedule(event_handler, file, recursive=False)
+        abs_path = os.path.join(project_root, file)
+        if os.path.exists(abs_path):
+            observer.schedule(event_handler, abs_path, recursive=False)
             print(f"{Colors.CYAN}👀 Watching:{Colors.RESET} {file}")
 
     observer.start()
@@ -183,6 +198,9 @@ def main():
     print(f"{Colors.BOLD}{Colors.BLUE}  Summarum Development Server{Colors.RESET}")
     print(f"{Colors.BOLD}{Colors.BLUE}{'='*60}{Colors.RESET}\n")
 
+    # Save the project root directory
+    project_root = os.getcwd()
+
     # Initial build
     print(f"{Colors.BLUE}🚀 Performing initial build...{Colors.RESET}")
     try:
@@ -194,7 +212,7 @@ def main():
         sys.exit(1)
 
     # Start file watcher
-    observer = start_file_watcher()
+    observer = start_file_watcher(project_root)
 
     # Start HTTP server in a separate thread
     server_thread = threading.Thread(target=start_http_server, daemon=True)

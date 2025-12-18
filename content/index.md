@@ -14,6 +14,9 @@ cta_buttons:
     color: "orange"
     icon: "/static/icons/plus.svg"
 
+# Statement below CTA buttons (optional)
+cta_statement: "No credit card required. Free while in beta."
+
 # Feature tiles
 features:
   - title: "Simple Tracking"

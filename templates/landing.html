@@ -24,7 +24,7 @@
 
             <!-- Description -->
             <p class="text-lg text-gray-400 max-w-3xl mx-auto mb-12">
-                {{ page.hero_description }}
+                {{ page.hero_description | safe }}
             </p>
 
             <!-- CTA Buttons -->
@@ -32,10 +32,17 @@
                 {% for button in page.cta_buttons %}
                 <a href="{{ button.url }}" class="inline-flex items-center px-8 py-3 bg-brand-{{ button.color }} hover:bg-opacity-90 text-white font-semibold rounded-lg transition-all transform hover:scale-105 shadow-lg">
                     <img src="{{ button.icon }}" class="w-6 h-6 mr-2" alt="">
-                    {{ button.label }}
+                    {{ button.label | safe }}
                 </a>
                 {% endfor %}
             </div>
+
+            <!-- CTA Statement (optional) -->
+            {% if page.cta_statement %}
+            <p class="text-sm text-gray-400 mt-4">
+                {{ page.cta_statement | safe }}
+            </p>
+            {% endif %}
         </div>
     </div>
 </section>

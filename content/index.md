@@ -9,13 +9,13 @@ hero_description: "Keep track of your accounts across multiple banks, stock acco
 
 # Call-to-action buttons
 cta_buttons:
-  - label: "TestFlight Beta (iOS/iPadOS/macOS)<br>Available for free while in development."
+  - label: "TestFlight Beta (iOS/iPadOS/macOS)"
     url: "https://testflight.apple.com/join/NPuJVYJ5"
     color: "orange"
     icon: "/static/icons/plus.svg"
 
 # Statement below CTA buttons (optional)
-cta_statement: "No credit card required. Free while in beta."
+cta_statement: "Join now! Free while in development."
 
 # Feature tiles
 features:

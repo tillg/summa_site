@@ -117,6 +117,18 @@
     <link rel="alternate icon" type="image/png" href="/static/images/summarum_logo.png">
 
     
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CYN3HPDLCG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CYN3HPDLCG', {
+            'anonymize_ip': true,
+            'cookie_flags': 'SameSite=None;Secure'
+        });
+    </script>
+    
 
     
 </head>
@@ -195,6 +207,8 @@
                 
                 <a href="https://testflight.apple.com/join/NPuJVYJ5"
                    class="inline-flex items-center px-8 py-3 bg-brand-orange hover:bg-opacity-90 text-white font-semibold rounded-lg transition-all transform hover:scale-105 shadow-lg"
+                   
+                   onclick="gtag('event', 'cta_click', {'event_category': 'engagement', 'event_label': 'testflight_beta_(ios/ipados/macos)'});"
                    >
                     <img src="/static/icons/plus.svg" class="w-6 h-6 mr-2" alt="">
                     TestFlight Beta (iOS/iPadOS/macOS)
@@ -300,6 +314,8 @@
         </p>
         <a href="mailto:till.gartner@gmail.com"
            class="inline-flex items-center px-8 py-3 bg-brand-yellow hover:bg-opacity-90 text-black font-semibold rounded-lg transition-all transform hover:scale-105 shadow-lg"
+           
+           onclick="gtag('event', 'contact_click', {'event_category': 'engagement', 'event_label': 'email_contact'});"
            >
             <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>

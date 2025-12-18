@@ -60,17 +60,17 @@ Did it, this is the Google tag snippet that was created:
 
 ### Step 4: Add CTA Button Tracking - Done
 
-### Step 5: Environment Detection - Done
+### Step 5: Configuration - Done
 
 **Implementation completed!**
 
 All tracking code has been integrated:
 - GA4 tracking script added to templates/base.html
 - Event tracking added to CTA buttons in landing page
-- Environment detection configured (analytics disabled in dev, enabled in production)
-- Verified working correctly in both dev and production modes
+- Analytics always enabled for all builds
+- Verified working correctly
 
-To deploy with analytics enabled, build with: `ENVIRONMENT=production python generate_site.py`
+To build and deploy, simply run: `python generate_site.py`
 
 ---
 
@@ -130,20 +130,17 @@ Add event tracking to CTA buttons in your templates:
 </a>
 ```
 
-### Step 5: Environment Detection
+### Step 5: Configuration
 
-Ensure analytics are disabled in development to avoid polluting production data. Update `config.py`:
+Final configuration in `config.py`:
 
 ```python
-import os
-
-# Detect environment based on domain or environment variable
-IS_PRODUCTION = os.getenv('ENVIRONMENT') == 'production' or os.getenv('DOMAIN') == 'summarum.app'
-
 # Google Analytics
-GOOGLE_ANALYTICS_ID = "G-XXXXXXXXXX" if IS_PRODUCTION else None
-ENABLE_ANALYTICS = IS_PRODUCTION
+GOOGLE_ANALYTICS_ID = "G-CYN3HPDLCG"
+ENABLE_ANALYTICS = True
 ```
+
+Analytics are always enabled for simplicity. All builds will include tracking.
 
 ---
 
@@ -151,10 +148,13 @@ ENABLE_ANALYTICS = IS_PRODUCTION
 
 ### Local Testing
 
-1. Start development server: `python dev_server.py`
-2. Open browser to `http://localhost:8000`
-3. Verify GA4 script is NOT loaded (analytics disabled in dev)
-4. Check browser console for any errors
+1. Build the site: `python generate_site.py`
+2. Start development server: `python dev_server.py`
+3. Open browser to `http://localhost:8000`
+4. Open browser DevTools → Network tab
+5. Verify `gtag/js` script loads successfully
+6. Check browser console for any errors
+7. Click CTA buttons and verify events fire in console (if debug mode enabled)
 
 ### Production Testing
 

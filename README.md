@@ -178,16 +178,7 @@ Your content here...
 
 ### Google Analytics 4 (GA4)
 
-The site is configured with Google Analytics 4 for tracking user behavior and traffic.
-
-**Environment-Based Tracking:**
-- **Development**: Analytics are automatically disabled when building locally
-- **Production**: Analytics are enabled when building with `ENVIRONMENT=production`
-
-**Building for production with analytics:**
-```bash
-ENVIRONMENT=production python3 generate_site.py
-```
+The site is configured with Google Analytics 4 for tracking user behavior and traffic. Analytics are always enabled and will track all page views and interactions.
 
 ### Viewing Analytics Data
 

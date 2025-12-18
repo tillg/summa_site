@@ -2,8 +2,6 @@
 Configuration for Summarum website
 """
 
-import os
-
 from design_variables import (
     BRAND_COLORS,
     BACKGROUND_COLORS,
@@ -42,9 +40,5 @@ TESTFLIGHT_LINK = ""  # Add TestFlight URL here
 MACOS_DOWNLOAD_LINK = ""  # Add macOS download URL here
 
 # Google Analytics
-# Enable analytics only in production
-# Set ENVIRONMENT=production when deploying to enable analytics
-# For local development, analytics will be disabled by default
-IS_PRODUCTION = os.getenv('ENVIRONMENT', '').lower() == 'production'
 GOOGLE_ANALYTICS_ID = "G-CYN3HPDLCG"
-ENABLE_ANALYTICS = IS_PRODUCTION
+ENABLE_ANALYTICS = True

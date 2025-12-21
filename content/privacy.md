@@ -4,6 +4,20 @@ template: page
 description: How we handle your data and protect your privacy
 ---
 
+# Privacy Explanation - No Bullshit Version
+
+We know privacy policies can be long and boring, so let’s skip the legal jargon and get straight to the point. Summarum is designed with your privacy in mind. Here’s the deal:
+
+* Zero trackers, zero analytics: Summarum collects absolutely no data about you or your usage of the app. We don’t use any analytics frameworks or tracking code whatsoever.
+* On your device, always: All your data stays on your device — your iPhone, iPad, or Mac. The only exception is if you choose to turn on iCloud sync, which just stores your data in your personal iCloud (so you can sync between your own devices). Even then, we never see any of it.
+* No servers, no bank connections: Summarum never sends your information to any server, period. The app doesn’t connect to any bank APIs or external services to fetch data. In fact, Summarum works without an internet connection at all (aside from optional iCloud sync).
+* No account needed: We don’t make you create an account or hand over your email, phone number, or any personal details. You can use Summarum straight out of the box with nothing tying it back to you.
+* Nothing to share or sell: We can’t access, use, or sell any of your data — because we don’t collect any in the first place. There’s literally nothing of yours on our end. (And even if there were, we wouldn’t dream of it.)
+* On-device processing only: If you share a screenshot or image with Summarum (for example, to extract info), that image is processed entirely on your device. It never leaves your iPhone, iPad, or Mac for cloud processing. Your images and data stay with you, always.
+* Privacy by design: Summarum respects your privacy by design. We intentionally built it so that we know nothing about you. We don’t need to, and that’s the whole point — your business stays your business.
+
+# Privacy Statement - Legal version
+
 **Effective date:** 2025-12-01
 
 Summarum ("the App") is provided by Till Gartner ("we", "us", or "our"). Your privacy is important to us. This Privacy Policy explains how your information is handled when you use the App.

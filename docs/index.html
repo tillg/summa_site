@@ -194,12 +194,12 @@
 
             <!-- Tagline -->
             <p class="text-2xl md:text-3xl text-gray-300 mb-8">
-                Your Financial Overview, Simplified
+                “Summarum – Your Data, Your Way”
             </p>
 
             <!-- Description -->
             <p class="text-lg text-gray-400 max-w-3xl mx-auto mb-12">
-                Keep track of your accounts across multiple banks, stock accounts and other value stores. Dead simple, no API integration, simple, manual updates.<br>New: Check your account on your eBanking app, screenshot, send to Summarum - done.
+                Track any number you care about – from bank balances and stock portfolios to car mileage and personal metrics – in one place. Just take a screenshot or photo, share it to Summarum, and the value is logged automatically. No bank links, no accounts, and all data stays on your device (iCloud sync is optional).
             </p>
 
             <!-- CTA Buttons -->
@@ -226,8 +226,23 @@
     </div>
 </section>
 
-<!-- Features Section -->
+<!-- Markdown Content Section -->
+
 <section class="py-20 px-4 sm:px-6 lg:px-8" style="background-color: var(--color-bg-tertiary);">
+    <div class="max-w-4xl mx-auto markdown-content">
+        <h2>How Summarum Works</h2>
+<p>Summarum is built for simplicity and privacy. Here's how to use it:</p>
+<ol>
+<li><strong>Add a series:</strong> Create a series for whatever you want to track — a bank account, stock portfolio, crypto wallet, car odometer, weight, or any other number.  </li>
+<li><strong>Capture a value:</strong> Check your number, take a screenshot or photo, and share it to Summarum. We'll extract the value and date automatically. You can also enter values manually if you prefer.  </li>
+<li><strong>See your progress:</strong> Summarum plots your values on a graph so you can visualize trends across multiple series and see your combined totals at a glance.</li>
+</ol>
+    </div>
+</section>
+
+
+<!-- Features Section -->
+<section class="py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
         <h2 class="text-4xl font-bold text-center mb-16">
             <span class="bg-gradient-to-r from-brand-orange to-brand-yellow bg-clip-text text-transparent">
@@ -237,14 +252,14 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            <!-- Feature: Simple Tracking -->
+            <!-- Feature: All‑in‑One Tracking -->
             <div class="bg-black border rounded-lg p-8 hover:border-brand-orange transition-colors" style="border-color: var(--color-border-primary);">
                 <div class="w-12 h-12 bg-brand-orange rounded-lg flex items-center justify-center mb-4">
                     <img src="/static/icons/chart-bar.svg" class="w-6 h-6 text-white icon-white" alt="">
                 </div>
-                <h3 class="text-xl font-semibold mb-3">Simple Tracking</h3>
+                <h3 class="text-xl font-semibold mb-3">All‑in‑One Tracking</h3>
                 <p class="text-gray-400">
-                    Track you balances across multiple bank accounts, stock portfolios, and value stores in one place.
+                    Collect and organize balances from multiple bank accounts, stock portfolios, crypto wallets, car mileage, weight and any other numbers in one place. Summarum plots them on a single graph for a unified overview.
                 </p>
             </div>
             
@@ -255,18 +270,18 @@
                 </div>
                 <h3 class="text-xl font-semibold mb-3">Privacy First</h3>
                 <p class="text-gray-400">
-                    All data is processed and stored on device.<br>Note: When using Apple Cloud Sync, it is stored in your personal Apple Cloud space.
+                    All data is processed and stored on your device. Summarum never connects to banks or collects analytics. If you enable Apple Cloud Sync, your data lives in your personal iCloud space – nowhere else.
                 </p>
             </div>
             
-            <!-- Feature: Dead Simple -->
+            <!-- Feature: Screenshot Magic -->
             <div class="bg-black border rounded-lg p-8 hover:border-brand-coral transition-colors" style="border-color: var(--color-border-primary);">
                 <div class="w-12 h-12 bg-brand-coral rounded-lg flex items-center justify-center mb-4">
                     <img src="/static/icons/lightning.svg" class="w-6 h-6 text-white icon-white" alt="">
                 </div>
-                <h3 class="text-xl font-semibold mb-3">Dead Simple</h3>
+                <h3 class="text-xl font-semibold mb-3">Screenshot Magic</h3>
                 <p class="text-gray-400">
-                    Manual updates, straightforward interface. No setup, no linking to banks. Make a screenshot, share it to Summarum, done
+                    Adding data is as simple as taking a screenshot or photo of your banking app or odometer. Share it to Summarum and we extract the value automatically. Manual entry works too.”
                 </p>
             </div>
             
@@ -285,15 +300,15 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <div class="rounded-lg overflow-hidden border" style="border-color: var(--color-border-primary);">
+            <div class="rounded-lg overflow-hidden">
                 <img src="/static/images/iPhone_Screenshot.png" alt="Summarum App on iPhone" class="w-full h-auto">
             </div>
             
-            <div class="rounded-lg overflow-hidden border" style="border-color: var(--color-border-primary);">
+            <div class="rounded-lg overflow-hidden">
                 <img src="/static/images/iPad_Screenshot.png" alt="Summarum App on iPad" class="w-full h-auto">
             </div>
             
-            <div class="rounded-lg overflow-hidden border" style="border-color: var(--color-border-primary);">
+            <div class="rounded-lg overflow-hidden">
                 <img src="/static/images/macOS_Screenshot.png" alt="Summarum App on macOS" class="w-full h-auto">
             </div>
             
@@ -329,6 +344,64 @@
 /* Style for SVG icons to ensure they display properly in white */
 .icon-white {
     filter: brightness(0) invert(1);
+}
+
+/* Markdown content styling */
+.markdown-content {
+    color: #e5e7eb; /* gray-200 */
+}
+
+.markdown-content h2 {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    background: linear-gradient(to right, #ff6b35, #f7931e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.markdown-content h3 {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 600; /* font-semibold */
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    color: #f9fafb; /* gray-50 */
+}
+
+.markdown-content p {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    font-size: 1.125rem; /* text-lg */
+    color: #d1d5db; /* gray-300 */
+}
+
+.markdown-content ol,
+.markdown-content ul {
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    font-size: 1.125rem; /* text-lg */
+}
+
+.markdown-content li {
+    margin-bottom: 0.75rem;
+    line-height: 1.75;
+    color: #d1d5db; /* gray-300 */
+}
+
+.markdown-content strong {
+    color: #f9fafb; /* gray-50 */
+    font-weight: 600;
+}
+
+.markdown-content a {
+    color: #f7931e; /* brand-yellow */
+    text-decoration: underline;
+}
+
+.markdown-content a:hover {
+    color: #ff6b35; /* brand-orange */
 }
 </style>
 

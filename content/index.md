@@ -4,8 +4,8 @@ template: landing
 description: Keep track of your wealth across multiple bank accounts, stock accounts and other value stores. Dead simple, no API integration, simple, manual updates.
 
 # Hero section
-tagline: "Your Financial Overview, Simplified"
-hero_description: "Keep track of your accounts across multiple banks, stock accounts and other value stores. Dead simple, no API integration, simple, manual updates.<br>New: Check your account on your eBanking app, screenshot, send to Summarum - done."
+tagline: “Summarum – Your Data, Your Way”
+hero_description: Track any number you care about – from bank balances and stock portfolios to car mileage and personal metrics – in one place. Just take a screenshot or photo, share it to Summarum, and the value is logged automatically. No bank links, no accounts, and all data stays on your device (iCloud sync is optional).
 
 # Call-to-action buttons
 cta_buttons:
@@ -19,16 +19,16 @@ cta_statement: "Join now! Free while in development."
 
 # Feature tiles
 features:
-  - title: "Simple Tracking"
-    description: "Track you balances across multiple bank accounts, stock portfolios, and value stores in one place."
+  - title: All‑in‑One Tracking
+    description: Collect and organize balances from multiple bank accounts, stock portfolios, crypto wallets, car mileage, weight and any other numbers in one place. Summarum plots them on a single graph for a unified overview.
     icon: "/static/icons/chart-bar.svg"
     color: "orange"
-  - title: "Privacy First"
-    description: "All data is processed and stored on device.<br>Note: When using Apple Cloud Sync, it is stored in your personal Apple Cloud space."
+  - title: Privacy First
+    description: All data is processed and stored on your device. Summarum never connects to banks or collects analytics. If you enable Apple Cloud Sync, your data lives in your personal iCloud space – nowhere else.
     icon: "/static/icons/lock.svg"
     color: "yellow"
-  - title: "Dead Simple"
-    description: "Manual updates, straightforward interface. No setup, no linking to banks. Make a screenshot, share it to Summarum, done"
+  - title: Screenshot Magic
+    description: Adding data is as simple as taking a screenshot or photo of your banking app or odometer. Share it to Summarum and we extract the value automatically. Manual entry works too.”
     icon: "/static/icons/lightning.svg"
     color: "coral"
 
@@ -47,3 +47,11 @@ contact_section:
   description: "Have questions or feedback? I'd love to hear from you."
   email: "till.gartner@gmail.com"
 ---
+
+## How Summarum Works
+
+Summarum is built for simplicity and privacy. Here's how to use it:
+
+1. **Add a series:** Create a series for whatever you want to track — a bank account, stock portfolio, crypto wallet, car odometer, weight, or any other number.  
+2. **Capture a value:** Check your number, take a screenshot or photo, and share it to Summarum. We'll extract the value and date automatically. You can also enter values manually if you prefer.  
+3. **See your progress:** Summarum plots your values on a graph so you can visualize trends across multiple series and see your combined totals at a glance.

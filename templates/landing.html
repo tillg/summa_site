@@ -51,8 +51,17 @@
     </div>
 </section>
 
-<!-- Features Section -->
+<!-- Markdown Content Section -->
+{% if page.content %}
 <section class="py-20 px-4 sm:px-6 lg:px-8" style="background-color: var(--color-bg-tertiary);">
+    <div class="max-w-4xl mx-auto markdown-content">
+        {{ page.content | safe }}
+    </div>
+</section>
+{% endif %}
+
+<!-- Features Section -->
+<section class="py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
         <h2 class="text-4xl font-bold text-center mb-16">
             <span class="bg-gradient-to-r from-brand-orange to-brand-yellow bg-clip-text text-transparent">
@@ -88,7 +97,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {% for screenshot in page.screenshots %}
-            <div class="rounded-lg overflow-hidden border" style="border-color: var(--color-border-primary);">
+            <div class="rounded-lg overflow-hidden">
                 <img src="{{ screenshot.image }}" alt="{{ screenshot.alt }}" class="w-full h-auto">
             </div>
             {% endfor %}
@@ -124,6 +133,64 @@
 /* Style for SVG icons to ensure they display properly in white */
 .icon-white {
     filter: brightness(0) invert(1);
+}
+
+/* Markdown content styling */
+.markdown-content {
+    color: #e5e7eb; /* gray-200 */
+}
+
+.markdown-content h2 {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    background: linear-gradient(to right, #ff6b35, #f7931e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.markdown-content h3 {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 600; /* font-semibold */
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    color: #f9fafb; /* gray-50 */
+}
+
+.markdown-content p {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    font-size: 1.125rem; /* text-lg */
+    color: #d1d5db; /* gray-300 */
+}
+
+.markdown-content ol,
+.markdown-content ul {
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    font-size: 1.125rem; /* text-lg */
+}
+
+.markdown-content li {
+    margin-bottom: 0.75rem;
+    line-height: 1.75;
+    color: #d1d5db; /* gray-300 */
+}
+
+.markdown-content strong {
+    color: #f9fafb; /* gray-50 */
+    font-weight: 600;
+}
+
+.markdown-content a {
+    color: #f7931e; /* brand-yellow */
+    text-decoration: underline;
+}
+
+.markdown-content a:hover {
+    color: #ff6b35; /* brand-orange */
 }
 </style>
 {% endblock %}

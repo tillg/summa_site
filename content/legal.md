@@ -4,30 +4,30 @@ template: page
 description: Legal information and imprint
 ---
 
-# Impressum
+# Legal Note (Impressum)
 
-## Angaben gemäß § 5 TMG
-
-Till Gartner
-
-## Kontakt
-
-E-Mail: till.gartner@gmail.com
-
-## Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
+## Information pursuant to § 5 TMG (German Telemedia Act)
 
 Till Gartner
 
-## Haftungsausschluss
+## Contact
 
-### Haftung für Inhalte
+Email: till.gartner@gmail.com
 
-Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
+## Responsible for content according to § 55 Para. 2 RStV (German Interstate Broadcasting Treaty)
 
-### Haftung für Links
+Till Gartner
 
-Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+## Disclaimer
 
-## Datenschutz
+### Liability for Content
 
-Informationen zum Datenschutz finden Sie in unserer [Datenschutzerklärung](/privacy.html).
+The contents of our pages have been created with the utmost care. However, we cannot guarantee the accuracy, completeness, or currentness of the content.
+
+### Liability for Links
+
+Our website contains links to external third-party websites over whose content we have no control. Therefore, we cannot accept any liability for this external content. The respective provider or operator of the linked pages is always responsible for the content of the linked pages.
+
+## Privacy
+
+For information on data protection, please see our [Privacy Policy](/privacy.html).

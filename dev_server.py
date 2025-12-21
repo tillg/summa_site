@@ -147,6 +147,10 @@ class SiteRebuilder(FileSystemEventHandler):
 class QuietHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
     """HTTP request handler with minimal logging."""
 
+    def __init__(self, *args, directory=None, **kwargs):
+        """Initialize with a fixed directory."""
+        super().__init__(*args, directory=directory, **kwargs)
+
     def log_message(self, format, *args):
         """Override to reduce verbosity."""
         # Only log errors
@@ -156,15 +160,16 @@ class QuietHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                   f"{Colors.RED}{self.address_string()} - {format % args}{Colors.RESET}")
 
 
-def start_http_server():
+def start_http_server(project_root):
     """Start the HTTP server in a separate thread."""
-    os.chdir(OUTPUT_DIR)
+    # Use absolute path for serving directory
+    serve_dir = os.path.join(project_root, OUTPUT_DIR)
 
-    # Create server
-    Handler = QuietHTTPRequestHandler
+    # Create server with handler that uses fixed directory
+    Handler = lambda *args, **kwargs: QuietHTTPRequestHandler(*args, directory=serve_dir, **kwargs)
     with socketserver.TCPServer((HOST, PORT), Handler) as httpd:
         print(f"{Colors.GREEN}📡 Server running at {Colors.BOLD}http://{HOST}:{PORT}/{Colors.RESET}")
-        print(f"{Colors.CYAN}📂 Serving files from: {Colors.RESET}{os.getcwd()}\n")
+        print(f"{Colors.CYAN}📂 Serving files from: {Colors.RESET}{serve_dir}\n")
         httpd.serve_forever()
 
 
@@ -215,7 +220,7 @@ def main():
     observer = start_file_watcher(project_root)
 
     # Start HTTP server in a separate thread
-    server_thread = threading.Thread(target=start_http_server, daemon=True)
+    server_thread = threading.Thread(target=start_http_server, args=(project_root,), daemon=True)
     server_thread.start()
 
     # Instructions

@@ -5,7 +5,7 @@ description: Keep track of your wealth across multiple bank accounts, stock acco
 
 # Hero section
 tagline: “Summarum – Your Data, Your Way”
-hero_description: Track any number you care about – from bank balances and stock portfolios to car mileage and personal metrics – in one place. Just take a screenshot or photo, share it to Summarum, and the value is logged automatically. No bank links, no accounts, and all data stays on your device (iCloud sync is optional).
+hero_description: Track any number you care about – from bank balances and stock portfolios to car mileage and personal metrics – in one place. Just take a screenshot or photo, share it to Summarum, and the value is logged automatically. No bank links, no accounts, all data stays on your device (iCloud sync is optional).
 
 # Call-to-action buttons
 cta_buttons:
@@ -48,10 +48,19 @@ contact_section:
   email: "till.gartner@gmail.com"
 ---
 
-## How Summarum Works
+## How it works (in short)
 
-Summarum is built for simplicity and privacy. Here's how to use it:
+1. **Check a number**
+   Open your banking app, investment app, scale, or car dashboard.
 
-1. **Add a series:** Create a series for whatever you want to track — a bank account, stock portfolio, crypto wallet, car odometer, weight, or any other number.  
-2. **Capture a value:** Check your number, take a screenshot or photo, and share it to Summarum. We'll extract the value and date automatically. You can also enter values manually if you prefer.  
-3. **See your progress:** Summarum plots your values on a graph so you can visualize trends across multiple series and see your combined totals at a glance.
+2. **Screenshot or take a photo**
+   Share it to Summarum.
+
+3. **See it as a graph**
+   Summarum extracts the value and adds it to the right series — all on your device.
+
+No accounts. No bank connections. No cloud required.
+
+[Learn how it works →](/how-it-works.html)
+
+[Read the FAQ →](/faq.html)

@@ -41,6 +41,13 @@ screenshots:
   - image: "/static/images/macOS_Screenshot.png"
     alt: "Summarum App on macOS"
 
+# Testimonials
+testimonials:
+  - title: "A clean, private overview — finally"
+    text: "II finally found a solution that truly works for me. For a long time, I tracked everything in self-built Notion databases, which came with several pinpoints. The charts never really looked right, and knowing that Notion uses cookies held me from tracking my finances. With Summarum, these issues are simply gone. I get a clear overview of every trackable aspect of my life, from the length of my runs to a complete financial overview, all in one place that feels clean, intentional, and truly private."
+    author: "Henri Sandmann</br>Student at TUM School of Management"
+  
+
 # Contact section
 contact_section:
   title: "Get in Touch"

@@ -4,7 +4,7 @@ template: landing
 description: Keep track of your wealth across multiple bank accounts, stock accounts and other value stores. Dead simple, no API integration, simple, manual updates.
 
 # Hero section
-tagline: “Summarum – Your Data, Your Way”
+tagline: Summarum – Your Data, Your Way
 hero_description: Track any number you care about – from bank balances and stock portfolios to car mileage and personal metrics – in one place. Just take a screenshot or photo, share it to Summarum, and the value is logged automatically. No bank links, no accounts, all data stays on your device (iCloud sync is optional).
 
 # Call-to-action buttons

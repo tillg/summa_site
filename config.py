@@ -22,7 +22,7 @@ from design_variables import (
 
 # Site metadata
 SITE_NAME = "Summarum"
-SITE_TAGLINE = "Your Financial Overview, Simplified"
+SITE_TAGLINE = "Your Data, your Way"
 SITE_DESCRIPTION = "Keep track of your wealth across multiple bank accounts, stock accounts and other value stores. Dead simple, no API integration, simple, manual updates."
 DOMAIN = "summarum.app"
 

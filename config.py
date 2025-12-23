@@ -23,7 +23,7 @@ from design_variables import (
 # Site metadata
 SITE_NAME = "Summarum"
 SITE_TAGLINE = "Your Data, your Way"
-SITE_DESCRIPTION = "Keep track of your wealth across multiple bank accounts, stock accounts and other value stores. Dead simple, no API integration, simple, manual updates."
+SITE_DESCRIPTION = "Track any number you care about - from bank balances and stock portfolios to car mileage and personal metrics - in one place."
 DOMAIN = "summarum.app"
 
 # Directories

@@ -30,6 +30,15 @@
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 {% for button in page.cta_buttons %}
+                {% if button.is_badge %}
+                <a href="{{ button.url }}"
+                   class="inline-block transition-all transform hover:scale-105"
+                   {% if enable_analytics and google_analytics_id %}
+                   onclick="gtag('event', 'cta_click', {'event_category': 'engagement', 'event_label': '{{ button.label | replace('<br>', ' ') | striptags | lower | replace(' ', '_') }}'});"
+                   {% endif %}>
+                    <img src="{{ button.icon }}" class="h-16" alt="{{ button.label }}" style="height: 64px;">
+                </a>
+                {% else %}
                 <a href="{{ button.url }}"
                    class="inline-flex items-center px-8 py-3 bg-brand-{{ button.color }} hover:bg-opacity-90 text-white font-semibold rounded-lg transition-all transform hover:scale-105 shadow-lg"
                    {% if enable_analytics and google_analytics_id %}
@@ -38,6 +47,7 @@
                     <img src="{{ button.icon }}" class="w-6 h-6 mr-2" alt="">
                     {{ button.label | safe }}
                 </a>
+                {% endif %}
                 {% endfor %}
             </div>
 

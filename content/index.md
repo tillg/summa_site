@@ -9,13 +9,14 @@ hero_description: Track any number you care about – from bank balances and sto
 
 # Call-to-action buttons
 cta_buttons:
-  - label: "TestFlight Beta (iOS/iPadOS/macOS)"
-    url: "https://testflight.apple.com/join/NPuJVYJ5"
+  - label: "Available on AppStore (iOS/iPadOS)"
+    url: "https://apps.apple.com/de/app/summarum/id6756500920"
     color: "orange"
-    icon: "/static/icons/plus.svg"
+    icon: "/static/images/app-store-badge.svg"
+    is_badge: true
 
 # Statement below CTA buttons (optional)
-cta_statement: "Join now! Free while in development."
+cta_statement: "Join now! Free & fresh!"
 
 # Feature tiles
 features:

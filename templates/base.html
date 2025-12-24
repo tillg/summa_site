@@ -6,6 +6,28 @@
     <title>{% block title %}{{ page.title }} - {{ site.name }}{% endblock %}</title>
     <meta name="description" content="{% block description %}{{ page.description }}{% endblock %}">
 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://{{ site.domain }}/{% block og_url %}{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}{{ page.title }} - {{ site.name }}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{{ page.description }}{% endblock %}">
+    <meta property="og:image" content="https://{{ site.domain }}/static/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="{{ site.name }}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://{{ site.domain }}/{% block twitter_url %}{% endblock %}">
+    <meta property="twitter:title" content="{% block twitter_title %}{{ page.title }} - {{ site.name }}{% endblock %}">
+    <meta property="twitter:description" content="{% block twitter_description %}{{ page.description }}{% endblock %}">
+    <meta property="twitter:image" content="https://{{ site.domain }}/static/images/og-image.png">
+
+    <!-- Apple -->
+    <meta name="apple-mobile-web-app-title" content="{{ site.name }}">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
